@@ -1,52 +1,89 @@
-# Level Up
+# 🎮 Level Up
 
-A gamified daily task system — configure your tasks and reward shop once, then the
-system locks so you can't casually water down your own goals. Complete tasks to earn
-coins and build per-task streaks; spend coins in the reward shop.
+**Level Up** is a gamified productivity application built with **Next.js** that helps users stay consistent with their daily goals. Unlike traditional to-do apps, users configure their tasks and reward shop only once. After setup, the configuration is locked, encouraging discipline and preventing frequent changes to personal goals.
 
-## Tech stack
+## 🌐 Live Demo
+
+👉 https://to-do-sandy-delta.vercel.app/
+
+---
+
+## ✨ Features
+
+- 🎯 Create custom daily tasks during onboarding
+- 🪙 Earn coins by completing tasks
+- 🔥 Build individual task streaks
+- 🎁 Redeem rewards from your custom reward shop
+- 🏆 Achievement system
+- 📅 Calendar view
+- 🔒 Locked configuration system
+- ⚙️ Secure configuration reset with RESET confirmation
+
+---
+
+## 🛠️ Tech Stack
 
 - Next.js 15 (App Router)
 - React 19
 - TypeScript
 - Tailwind CSS
-- lucide-react (icons)
+- Lucide React
 
-## Getting started
+---
+
+## 🚀 Getting Started
+
+### Clone the repository
+
+```bash
+git clone https://github.com/teja3112/TO-DO.git
+cd TO-DO
+```
+
+### Install dependencies
 
 ```bash
 npm install
+```
+
+### Start the development server
+
+```bash
 npm run dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
+Open **http://localhost:3000** in your browser.
 
-## Other scripts
+---
+
+## 📦 Other Scripts
 
 ```bash
-npm run build   # production build
-npm run start   # run the production build (after `npm run build`)
+npm run build    # Create production build
+npm run start    # Start production server
 ```
 
-## Project structure
+---
+
+## 📁 Project Structure
 
 ```
 level-up-nextjs/
 ├── app/
-│   ├── layout.tsx        # root layout, imports globals.css
-│   ├── page.tsx           # entry point, renders <LevelUpApp />
-│   └── globals.css        # Tailwind directives + base styles
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
 ├── components/
-│   ├── LevelUpApp.tsx      # main app: sidebar nav, dashboard, rewards, achievements, settings
-│   ├── OnboardingWizard.tsx # first-run setup wizard (tasks + reward shop)
+│   ├── LevelUpApp.tsx
+│   ├── OnboardingWizard.tsx
 │   ├── ConfigLockedNotice.tsx
-│   ├── SettingsPage.tsx    # configuration reset flow (type RESET to confirm)
-│   ├── TaskRow.tsx          # task editor row used only during onboarding
-│   ├── RewardRow.tsx        # reward editor row used only during onboarding
-│   └── ui.tsx               # shared presentational primitives (buttons, inputs, confetti, etc.)
+│   ├── SettingsPage.tsx
+│   ├── TaskRow.tsx
+│   ├── RewardRow.tsx
+│   └── ui.tsx
 ├── lib/
-│   ├── types.ts             # shared TypeScript types
-│   └── constants.ts         # design tokens, seed data, helper functions
+│   ├── types.ts
+│   └── constants.ts
 ├── package.json
 ├── next.config.ts
 ├── tsconfig.json
@@ -55,24 +92,73 @@ level-up-nextjs/
 └── README.md
 ```
 
-## How the app works
+---
 
-1. **First run** — you go through a short onboarding wizard: define your daily tasks
-   (name, category, coin reward) and your reward shop (icon, name, cost, optional
-   rules). Sensible defaults are pre-filled so you can just hit Next.
-2. **Finish setup** locks the configuration. From then on you can only complete tasks,
-   redeem rewards, and view your calendar/achievements — not edit the definitions.
-3. **Configuration** (sidebar, padlock icon) always shows a locked notice; from there
-   you can request a configuration reset.
-4. **Settings** has the actual reset flow: a warning, an optional "full reset" toggle
-   (wipes coins/streaks/achievements too), and it requires typing `RESET` before you
-   can confirm.
-5. Resetting sends you back through onboarding to rebuild your tasks and rewards.
+## 🔒 How the App Works
 
-## Notes
+### Initial Setup
 
-- All app state is in-memory (React state) for this prototype — refreshing the page
-  resets everything. Wiring up persistence (e.g. a database, or `localStorage` outside
-  of the artifact sandbox this was originally built in) is a natural next step.
-- Colors, spacing, and other design tokens live in `lib/constants.ts` if you want to
-  retheme the app.
+On the first launch, users:
+
+- Create their daily tasks
+- Create their reward shop
+- Configure their productivity system
+
+Default values are provided so users can get started quickly.
+
+### Configuration Lock
+
+Once onboarding is complete:
+
+- ✅ Complete tasks
+- ✅ Earn coins
+- ✅ Build streaks
+- ✅ Redeem rewards
+- ✅ View achievements
+
+Users **cannot**:
+
+- ❌ Edit tasks
+- ❌ Change reward values
+- ❌ Add or remove rewards
+
+This design encourages consistency instead of constantly changing goals.
+
+### Configuration Reset
+
+To modify the system, users must:
+
+1. Open **Settings**
+2. Choose **Reset Configuration**
+3. Optionally perform a full reset
+4. Type **RESET** to confirm
+
+This prevents accidental changes.
+
+---
+
+## 📝 Notes
+
+This project is currently a frontend prototype.
+
+Application state is stored in React state, so refreshing the page resets all progress.
+
+Future versions will include:
+
+- Google Authentication
+- Supabase Database
+- Cloud Sync
+- Progressive Web App (PWA)
+- AI Productivity Coach
+
+---
+
+## 👨‍💻 Author
+
+**Teja**
+
+---
+
+## ⭐ If you like this project
+
+Give the repository a ⭐ on GitHub.
